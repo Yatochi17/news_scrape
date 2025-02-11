@@ -3,14 +3,9 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 import time
-import os
-import subprocess
+
 
 def scrape_news():
-    # Install Chrome manually in Render
-    if not os.path.exists("/usr/bin/google-chrome"):
-        subprocess.run("wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb", shell=True)
-        subprocess.run("apt install ./google-chrome-stable_current_amd64.deb -y", shell=True)
 
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")  # Run in background (no browser window)
